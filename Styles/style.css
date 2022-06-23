@@ -1,0 +1,242 @@
+:root{
+    --primary: hsl(222, 26%,31%);
+    --secondary: hsl(223, 31%, 20%);
+    --screen-blue: hsl(224,36%,15%);
+    --button-background: hsl(225, 21%, 49%);
+    --button-shadow: hsl(224, 28%, 35%);
+    --button: hsl(6, 63%, 50%);
+    --button-red-shadow: hsl(6, 70%, 34%);
+
+    --button-light: hsl(30%, 25%, 89%);
+    --button-orange: hsl(28, 16%, 65%);
+
+    --button-dark-grayish: hsl(221, 14%, 31%);
+    --btn: hsl(0,0,100%);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+     
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size:32px;
+    font-family: 'Spartan', sans-serif;
+    background-color: var(--primary);    
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.calculadora {
+    position:fixed;
+    display:grid;
+    height:500px;
+    width: 420px;
+    padding: 20px;
+    border-radius: 20px;
+    place-items: center;
+}
+
+#display {
+    height: 90px;
+    width: 400px;
+    display: flex; 
+    align-items: flex-end; 
+    justify-content: flex-end;
+    /* font-size: 30px; */
+    margin-bottom: 20px;
+    background-color: var(--screen-blue);
+    color: white;
+    font-size: 60px;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+
+}
+
+.pantalla {
+    word-wrap: break-word;
+    word-break:break-all;
+    overflow-wrap: break-word;
+
+}
+
+.buttons {
+    background-color: var(--secondary);
+    border-radius: 10px;
+    padding: 17px;
+}
+
+.number, .operator, .delete, #equal, #reset{
+    height:50px;
+    width: 80px;
+    padding: 10px;
+    margin:5px;
+    border-radius: 10px;
+    align-items:center;
+    font-size: 32px;
+    font-weight:700;
+    cursor: pointer;
+    color: var(--secondary);
+    border: 2px 2px 2px var(--button-dark-greyish);
+    transition: all 200ms ease;
+}
+
+button:hover{
+    transform: scale(1.10);
+}
+
+#reset, #delete{
+    font-size: 17px;
+    color:white;
+    background-color: var(--button-background);
+    box-shadow: 2px 2px 2px var(--button-background); 
+}
+
+#reset {
+    width:165px;
+}
+
+#equal {
+    color: white;
+    background-color:var(--button);
+    box-shadow: 2px 2px 2px var(--button-red-shadow);
+    width: 165px;
+
+}
+
+.footer-btn {
+    display: flex;
+    justify-content:space-between;
+    word-spacing: 5px;
+}
+
+.title {
+    color: white;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+
+/* - Mobile: 375px
+- Desktop: 1440px */
+
+@media screen and (max-width:390px) {
+      
+    .calculadora {
+        /* display:grid; */
+        height:100vh;
+        width: 100vw;
+        /* place-items: center; */
+        margin: auto;
+    }
+
+}
+
+@media screen and (max-width: 1140px) {
+    
+    .calculadora {
+        height:100vh;
+        width: 100vw;
+        margin: auto;
+    }
+}
+
+ input, #btn-color {
+    width: 100px;
+    height: 40px;
+    padding: 15px;
+    margin: 9px  50px;
+    margin-left: 60px;
+    border-radius: 900px;
+    justify-content: center;
+    background-color: hsl(269, 19%, 74%);
+    border-color: hsl(177, 92%,70%);
+    font-weight: 700;
+    color:rgb(46, 46, 53);
+    transition: 200ms;
+    place-content: center;
+}
+
+#btn-color:hover{
+    background: hsl(288, 20%, 90%);
+    transform:scale(1.10);
+    color: black;
+    font-weight: 700;
+}
+
+
+/* Tema Morado */
+
+/* :root {
+--dark-violet3:hsl(268, 75%, 9%);
+--dark-v3:hsl(268, 71%, 12%);
+
+--violet-key3: hsl(281, 89%, 26%);
+--vivid-magenta3: hsl(285, 91%, 52%);
+
+--pure-cyan3: hsl(176, 100%, 44%);
+--Soft-cyan3: hsl(177, 92%, 70%);
+
+--very-dark-violet3: hsl(268, 47%, 21%);
+--dark-magenta-key3:hsl(290, 70%, 36%);
+
+--yellow3: hsl(52, 100%, 62%);
+--very-dark-blue3: hsl(198, 20%, 13%);
+--white3: hsl(0, 0, 100%);
+}
+
+
+body {
+    background-color:var(--dark-violet3);
+}
+
+.buttons {
+    background-color:var(--dark-v3);
+}
+
+.number, .operator {
+    color: var(--pure-cyan3);
+}
+
+button{
+    background-color: var(--dark-v3);
+    color: white;
+    box-shadow:1px 1px 3px var(--vivid-magenta3);
+}
+
+#display {
+    background-color: var(--very-dark-blue3);
+    color:var(--pure-cyan3);
+}
+
+.delete {
+    background-color: var(--violet-key3);
+    box-shadow: 1px 1px 2px var(--vivid-magenta3);
+}
+
+#equal {
+    color: var(--dark-magenta-key3);
+    background-color:var(--pure-cyan3);
+    box-shadow: 2px 2px 2px var(--Soft-cyan3)
+}
+
+#reset {
+    background-color:var(--violet-key3);
+    box-shadow: 2px 2px 2px var(--vivid-magenta3)
+} 
+ */
+
+
+
+
+  
